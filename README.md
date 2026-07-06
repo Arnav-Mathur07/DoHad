@@ -12,7 +12,7 @@
 [![Leaflet.js](https://img.shields.io/badge/Leaflet-1.9-green.svg?style=flat-square&logo=leaflet&logoColor=white)](https://leafletjs.com/)
 [![PubMed](https://img.shields.io/badge/Database-PubMed-red.svg?style=flat-square)](https://pubmed.ncbi.nlm.nih.gl/)
 [![Research](https://img.shields.io/badge/Field-DOHaD%20%7C%20Toxicology-purple.svg?style=flat-square)](https://www.dohadsoc.org/)
-[![Open Source](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
+<!--[![Open Source](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE) -->
 
 ---
 
