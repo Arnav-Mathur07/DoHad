@@ -258,13 +258,13 @@ The platform processes and displays the following metadata schema:
 
 # 🧹 Quality Control
 
-To ensure the integrity of the data used for visualizations and search tools, the preprocessing pipeline applies several validation steps:
+As part of the preprocessing chain that ensures valid data for the visualisations and search engines, the following quality checks are performed:
 
-*   **BOM Correction:** Removes the UTF-8 Byte Order Mark (`\uFEFF`) from raw files, which can otherwise corrupt CSV headers in memory.
-*   **Strict Column Alignment:** Standardizes column names across files (e.g., aliasing `dose (ppm)` to `dose` and `organs` to `organ`).
-*   **Type Coercion:** Casts publication years to numeric integers (`_numericYear`) to ensure numerical filtering works correctly.
-*   **Duplicate Filtering:** Uses the unique PubMed ID (`pmid`) as a primary key to deduplicate records during updates.
-*   **String Sanitization:** Trims whitespace and strips unescaped double quotes that could break standard CSV line readers.
+* **BOM Correction:** Strips (UTF-8) Byte Order Mark (’\uFEFF’) which would otherwise corrupt the CSV headers in memory in raw files.
+• **Stringent Column Consistency:** Harmonizes column names within files (e.g. `dose (ppm)’ alias as `dose’ & `organs’ alias as `organ’).
+* **Type Coercion:** converts publication years to numeric ( integer -_numericYear- ).
+* **Duplicate Filtering:** uses the pubmed id (`pmid’) as a primary key to filter out duplicate during update.
+* **String sanitization:** is performed on each string, to remove any whitespace (killing the header) and to remove escaped quotes (which would otherwise throw the CSV file reader).
 
 ---
 
