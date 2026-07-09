@@ -18,13 +18,13 @@
 
 # 📖 Overview
 
-The **Developmental Origins of Health and Disease (DOHaD)** paradigm demonstrates that environmental exposures during critical windows of early life—prenatal development and early postnatal stages—permanently shape physiological structure and function, determining susceptibility to chronic non-communicable diseases later in life. 
+The **Developmental Origins of Health and Disease (DOHaD)** paradigm provides first evidence that the environment in the early life; sensitive window (prenatal and early postnatal period) cross that imprint our body structure and function and pre-dispose us to obesity, cardiovascular and non-communicable diseases in our later stage of life.
 
-Among these environmental hazards, heavy metals (such as **Arsenic**, **Cadmium**, **Lead**, and **Mercury**) are highly toxic, persistent, and ubiquitous. Because these toxicants easily cross the maternal-fetal barrier, early-life exposure can disrupt normal epigenetic programming, metabolic homeostasis, and organogenesis.
+ The most highly toxic, persistent and widespread of environmental risks are metalloid and heavy metal (including Arsenic, Cadmium, Lead and Mercury). Because these toxicants easily cross the maternal-fetal barrier early-life exposure could cause mass deregulation of epigenetic programming, energy metabolism and organogenesis.
 
-Despite the critical importance of DOHaD research, the scientific literature remains highly fragmented. Thousands of toxicology studies are scattered across disparate academic journals, written in varying formats, and indexed under generic medical terms. Consequently, epidemiologists, toxicologists, and policymakers struggle to quickly identify trends, isolate exposure thresholds, or run meta-analyses on how specific toxicants impact target organ systems.
+ While the need for DOHaD is undeniable,  what exists in the scientific literature is somewhat sporadic.  There are thousands of toxicology articles released in loosely-indexed,  informal institutions,  tables, and books and under very general ‘medical headlining’ terms.  This presents increasingly difficult challenges for behavioral epidemiologists and policy-makers to filter through as it directly pertains to trends of articles across the hundreds of thousands of publications,  to policesin the public population for exposures, or as an input for a meta-analysis.
 
-The **DOHaD Exposure Intelligence Platform** addresses this fragmentation by providing a unified repository and analysis suite. The platform offers a structured, quality-controlled research database, multi-dimensional filtering, and interactive visualizations. It bridges the gap between raw scientific papers and actionable epidemiological insights.
+This fragmentation is countered through a common repository and analytical platform,  the DOHaD Exposure Intelligence Platform. It is a coherent, quality-controlled research database, multi-dimensional filter, and visualization interface. Bridging the gap between publications in papers and epidemiological knowledge.
 
 ---
 
