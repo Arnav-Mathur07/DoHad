@@ -274,9 +274,8 @@ The platform supports two storage methods, balancing simplicity with scalability
 
 ### 1. Flat-File Storage (Static Deployment)
 *   **Format:** Structured CSV file (`prenatal_heavy_metals.csv`) stored in `frontend/assets/`.
-*   **In-Memory Querying:** Loaded client-side via a fetch request. A custom, quote-aware parsing engine processes the CSV in the browser.
-*   **Advantage:** Allows the platform to run serverless, making it easy to deploy on static hosts like GitHub Pages.
-
+*   **In-Memory Querying:** Fetched from the client side. The CSV is processed with a custom quote-aware parser engine in the browser.
+*   **Benefits:** Provides scope for the site to be run serverless,  thus very easily deployable on static hosting solutions such as GitHub Pages.
 ### 2. Relational Database (Enterprise Deployment)
 *   **Format:** Relational MySQL schema (`DOHaD` and `dohad_auth` databases).
 *   **Server Stack:** Node.js Express server running on port `3000` using the `mysql2` driver.
@@ -327,11 +326,11 @@ The search and filtering logic operates client-side to provide responsive result
                   └───────────────────────────────┘
 ```
 
-*   **AND-Gate Logic:** The application applies all active filters simultaneously. A record is only included in the output if it meets every selected criteria.
-*   **Deep Keyword Search:** The search input compares terms against the title, key findings, and abstract text, returning matches regardless of letter case.
-*   **Exposure Period Extraction:** If a user filters by exposure window, the engine runs text matches on the title and key findings to identify relevant studies.
-*   **Article Type Detection:** Filters partition the dataset into `Research` or `Review` by analyzing metadata tags and checking titles for keywords (e.g., searching for "review").
-*   **State Persistence:** Active filter criteria are serialized and saved to the browser's `sessionStorage`. This maintains the user's focus state when navigating between pages (e.g., index, database, analytics).
+* ** AND-Gate Logic:** All active filters are combined and applied in all at the same time. A record will be included in the result until it satisfies at the least all of the criteria.
+* **Deep Keyword Search:** This search input matches the terms it contains to the title, key findings, and abstract text, regardless of case.
+* **Extracting an Exposure Period:** When users filter by exposure window, the engine performs text matching on the title and key findings to find articles that fit.
+* **Article Type Recognition:** Filters separate into ‘Research’ and ‘Review’ articles by parsing metadata tags and searching titles for keywords such as “review”.
+* **State Persistence:** The current filter criteria are serialized and stored in the browser‘s sessionStorage. Maintains the focus state across pages (index, database, analytics).
 
 ---
 
