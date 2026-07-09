@@ -185,16 +185,19 @@ dohad_platform/
 The scientific basis of this project rests on several key areas of developmental toxicology and environmental health:
 
 ### 1. The DOHaD Hypothesis
-Organisms are highly sensitive to their environment during early development. Environmental stressors (such as nutrition or toxicants) can trigger permanent changes in physiology and structure through **fetal programming**. These shifts, while sometimes serving as immediate adaptations to survive in-utero stress, often lead to a mismatch with the postnatal environment, increasing the risk of chronic diseases in adulthood.
+During early development, organism are physiologically most adaptable to the environment.  However, environmental stressors (nutrition,  toxicants) of the environment can induce irreversible alterations of structure and physiology via fetal programming,  which although may reflect adaptations to in-utero stress,  could contribute to the increased to the postnatal environment and to heightened risks of later-life, non-communicable diseases.
 
 ### 2. Epigenetic Modifications
-Heavy metals do not necessarily alter DNA sequences directly. Instead, they interfere with epigenetic mechanisms. Prenatal metal exposure can alter **DNA methylation patterns**, modify **histones**, and disrupt **non-coding RNA expression**. These changes can silenece or overexpress genes regulating cellular differentiation, leaving a molecular footprint that persists throughout the individual's life.
+Heavy metals may not actually change DNA,  but they may hamper epigenetic processes.  Exposure to metals during the prenatal period hasbeen linked to changed methylation profiles,  changes to histones and changes in non-coding RNA expression which may silence or over-express genes that govern cellular differentiation,  which results in an indelible footprint that will stay with the individual forever.
 
 ### 3. Fetal Organogenesis & Tissue-Specific Vulnerability
-During gestation, organs develop at different rates. Exposure to developmental toxicants during these precise windows can disrupt tissue development:
-*   **Neurodevelopment:** Metals like Lead and Mercury easily cross the blood-brain barrier, altering synaptic connectivity and neural stem cell differentiation.
-*   **Cardiovascular System:** Arsenic exposure impairs endothelial function and microvascular development, laying the groundwork for adult hypertension and cardiovascular disease.
-*   **Renal Development:** Cadmium accumulates in the developing renal cortex, reducing nephron endowment and predisposing individuals to chronic kidney disease (CKD).
+During gestation,  different organ systems develop at various points in time.  Contact with developmental toxicants during critical time frames can affect the development of tissues by:
+
+Neurodevelopment: Metals (e.g.,  Lead,  Mercury) readily cross the blood-brain barrier,  thus affecting synaptic connectivity and neural differentiation of stem cells.
+
+Cardiovascular System:  Endothelial dysfunction and altered microvasculature development following arsenic exposure provide a precursor to adult hypertension and cardiovascular disease.
+
+Renal Development.2Cadmium builds up in the developing renal cortex,  decreasing nephron endowment and increasing the risk of CKD.
 
 ---
 
