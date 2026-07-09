@@ -224,23 +224,16 @@ flowchart TD
     Step8 --> Step9[10. Render Paginated Research Cards]
     Step9 -->|Updates Cached State| Step6
 ```
+The dataset is maintained and queried using an automated pipeline designed to retrieve, parse, and structure academic literature before feeding it into the interactive frontend:
 
-The dataset is managed and queried via an automated pipeline that collects,  parses and structures the academic materials before input to the interactive frontend:
-
-Entrez API Query: Python scripts search the NCBI Entrez Utilities to obtain relevant literature. The search query retrieves research with the following search strategy: (prenatal OR development OR in utero) AND (heavy metals OR arsenic OR lead OR mercury OR cadmium) AND (toxicity OR outcomes)
-
-XML Parsing: The Entrez server will give out raw XML files.  Metadata fields such as the PubMed ID (PMID), Title, Abstract, Journal, Year of Publication, DOI are extracted from the XML using parsing libraries in Python.
-
+Entrez API Querying: Python scripts query the NCBI Entrez Utilities to pull relevant literature. The search query targets research containing key terms: (prenatal OR developmental OR in utero) AND (heavy metals OR arsenic OR lead OR mercury OR cadmium) AND (toxicity OR outcomes).
+XML Parsing: The Entrez server returns raw XML files. Python's XML parsing libraries extract metadata fields, including the PubMed ID (PMID), Title, Abstract, Journal, Year of Publication, and DOI.
 Data Enrichment: Using regex pattern matching, scripts inspect titles and abstracts to pre-classify:
-Species:  Human; Animal: defined as Human or Animal keyword lists ( e.g.  Murine;  rat;  mouse;  pregnancy;  cohort).
-
-Exposure window- Classified either as Prenatal or Developmental.
-
-Organ System: (when appropriate vocab is detected e.g.  Brain, kidney, liver, heart, lung) then this will be recorded.
-
-Export:  Pipeline will produce a combined CSV (prenatal_heavy_metals.csv) and a formatted SQL script (DOHaD.sql) (with pre-designed INSERT statement) for database use.
-
-Interactive Workflow:  The exported data is loaded into memory on the client side. When the user interacts with the user interface, the engine quickly filters the data and updates the charts and study cards on-the-fly.
+Species: Categorized as Human or Animal based on keyword lists (e.g., murine, rat, mouse, pregnancy, cohort).
+Exposure Window: Flagged as Prenatal or Developmental.
+Organ System: Mapped to specific organ categories (e.g., brain, kidney, liver, heart, lung) if relevant vocabulary is detected in the text.
+Export: The pipeline generates both a unified CSV (prenatal_heavy_metals.csv) and a formatted SQL script (DOHaD.sql) with pre-constructed INSERT statements for database deployment.
+Interactive Workflow: Once exported, the data is fetched into memory client-side. When the user interacts with the UI, the engine rapidly filters the dataset and re-renders the charts and study cards dynamically.
 
 ---
 
