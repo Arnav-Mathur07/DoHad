@@ -326,7 +326,7 @@ The search and filtering logic operates client-side to provide responsive result
                   └───────────────────────────────┘
 ```
 
-* ** AND-Gate Logic:** All active filters are combined and applied in all at the same time. A record will be included in the result until it satisfies at the least all of the criteria.
+* **AND-Gate Logic:** All active filters are combined and applied in all at the same time. A record will be included in the result until it satisfies at the least all of the criteria.
 * **Deep Keyword Search:** This search input matches the terms it contains to the title, key findings, and abstract text, regardless of case.
 * **Extracting an Exposure Period:** When users filter by exposure window, the engine performs text matching on the title and key findings to find articles that fit.
 * **Article Type Recognition:** Filters separate into ‘Research’ and ‘Review’ articles by parsing metadata tags and searching titles for keywords such as “review”.
