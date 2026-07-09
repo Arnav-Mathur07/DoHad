@@ -39,75 +39,59 @@ This fragmentation is countered through a common repository and analytical platf
 
 ---
 
-# 🏗️ System Architecture
+ 🏗️ System Architecture & Data Workflow
 
-The DOHaD Exposure Intelligence Platform is designed with a decoupled architecture. This allows for both lightweight static deployments (loading preprocessed datasets client-side via JavaScript) and database-backed enterprise environments (powered by Node.js, Express, and MySQL).
+The DOHaD Exposure Intelligence Platform is designed with a decoupled architecture. This allows for both lightweight static deployments (loading preprocessed datasets client-side via JavaScript) and database-backed enterprise environments (powered by Node.js, Express, and MySQL). 
+
+The platform processes data through a structured pipeline to ensure quality control, rapid loading, and responsive interactive queries.
 
 ```mermaid
-graph TD
+flowchart TD
     %% Define styles
     classDef frontend fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
     classDef backend fill:#efebe9,stroke:#5d4037,stroke-width:2px;
     classDef storage fill:#efe8e0,stroke:#e65100,stroke-width:2px;
     classDef ingestion fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
 
-    %% Data Ingestion Pipeline
-    subgraph Curation [Data Collection & Processing]
-        A[Academic Literature / PubMed] -->|Entrez API| B[Python Extractor & QC Scripts]
-        B -->|Standardization & Label Injection| C[dohad_platform/frontend/assets/prenatal_heavy_metals.csv]
+    %% 1. Data Ingestion Pipeline
+    subgraph Curation [1. Data Collection & Processing]
+        A[PubMed / Academic Literature] -->|Entrez API Query| B[Python Extractor & QC Scripts]
+        B -->|Standardization & Label Injection| C[prenatal_heavy_metals.csv]
         B -->|Database Seeding| D[DOHaD.sql / MySQL 8.0]
     end
-    class B,C ingestion;
-    class D storage;
+    class A,B ingestion;
+    class C,D storage;
 
-    %% Server & Storage Layer
-    subgraph ServerLayer [Production Backend / Optional]
+    %% 2. Server Layer
+    subgraph ServerLayer [2. Production Backend / Optional]
         E[Node.js Express API] -->|mysql2 connector| D
         E -->|JSON Endpoints| F[API Controller]
     end
     class E,F backend;
 
-    %% Client Layer
-    subgraph ClientLayer [Interactive Frontend Application]
+    %% 3. Client Layer Workflow
+    subgraph ClientLayer [3. Interactive Frontend & User Workflow]
         G[Browser UI / HTML5 & CSS3]
         H[script.js Core Application Engine]
-        I[Dynamic Query / Filter Logic]
+        I[In-Memory Multi-Gate AND Filtering]
         J[Chart.js / Data Visualization]
-        K[Leaflet.js / Interactive Map Cell Grid]
+        K[Leaflet.js / Interactive Map]
+        L[Render Paginated Research Cards]
 
-        G -->|User Input Event| H
-        H -->|Fetches Static CSV / API| C
-        H -->|appState Caching & Persistence| I
+        G -->|User Updates Filters / Search Input| H
+        H -->|Fetches Static CSV or API| C
+        H -->|Updates Cached appState| I
         I -->|Calculates Data Arrays| J
         I -->|Calculates Coordinates| K
+        I -->|Paginates Data| L
+        J --> G
+        K --> G
+        L --> G
     end
-    class G,H,I,J,K frontend;
+    class G,H,I,J,K,L frontend;
 
     %% Interconnection
-    F -->|Optional REST Data| H
-```
-
----
-
-# 🔄 Workflow
-
-The platform processes data through a structured pipeline to ensure quality control, rapid loading, and responsive interactive queries.
-
-```mermaid
-flowchart TD
-    %% Workflow Steps
-    Step1[1. Literature Search] -->|Query: Toxicant + Prenatal/Developmental| Step2[2. Python Entrez Extraction]
-    Step2 --> Step3[3. Preprocessing & Quality Control]
-    Step3 -->|Standardize schemas & strip BOM| Step4[4. Database Seed / CSV Export]
-    Step4 --> Step5[5. Client-side Fetch & In-memory Parsing]
-    Step5 --> Step6[6. In-Memory State Management]
-    
-    %% User Action Loop
-    Step6 --> UserAction{User Updates Filters}
-    UserAction -->|Filter change / Search input| Step7[7. Multi-Gate AND Filtering]
-    Step7 --> Step8[8. Update Chart.js & Leaflet UI]
-    Step8 --> Step9[9. Render Paginated Research Cards]
-    Step9 -->|Updates Cached State| Step6
+    F -.->|Optional REST Data| H
 ```
 
 ---
