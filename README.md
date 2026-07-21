@@ -147,13 +147,13 @@ dohad_platform/
 
 ```mermaid
 flowchart TD
-    %% Publication-Quality Color Palette
-    classDef blueBox fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,rx:12px,ry:12px,shadow:true;
-    classDef purpleBox fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,rx:12px,ry:12px,shadow:true;
-    classDef orangeBox fill:#fff7ed,stroke:#f97316,stroke-width:2px,rx:12px,ry:12px,shadow:true;
-    classDef greenBox fill:#f0fdf4,stroke:#22c55e,stroke-width:2px,rx:12px,ry:12px,shadow:true;
-    classDef redBox fill:#fef2f2,stroke:#ef4444,stroke-width:2px,rx:12px,ry:12px,shadow:true;
-    classDef diseaseList fill:#ffffff,stroke:#ef4444,stroke-width:1px,stroke-dasharray: 3 3,rx:8px,ry:8px,shadow:false;
+    %% Publication-Quality Color Palette (Theme-Adaptive)
+    classDef blueBox stroke:#3b82f6,stroke-width:2px,rx:12px,ry:12px;
+    classDef purpleBox stroke:#a855f7,stroke-width:2px,rx:12px,ry:12px;
+    classDef orangeBox stroke:#f97316,stroke-width:2px,rx:12px,ry:12px;
+    classDef greenBox stroke:#22c55e,stroke-width:2px,rx:12px,ry:12px;
+    classDef redBox stroke:#ef4444,stroke-width:2px,rx:12px,ry:12px;
+    classDef diseaseList stroke:#ef4444,stroke-width:1px,stroke-dasharray: 3 3,rx:8px,ry:8px;
 
     %% Nodes
     A["🧪 Early-Life Environmental Toxicants<br/>(Lead, Mercury, Cadmium, Arsenic)"]:::blueBox
