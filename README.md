@@ -147,9 +147,6 @@ dohad_platform/
 
 ```mermaid
 flowchart TD
-    %% Font and Typography
-    classDef default font-family:sans-serif, font-size: 15px, color: #334155;
-    
     %% Publication-Quality Color Palette
     classDef blueBox fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,rx:12px,ry:12px,shadow:true;
     classDef purpleBox fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,rx:12px,ry:12px,shadow:true;
