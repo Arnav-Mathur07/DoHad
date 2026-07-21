@@ -77,7 +77,7 @@ graph TD
 
         G -->|User Input Event| H
         H -->|Fetches Static CSV / API| C
-        H -->|appState Caching & Persistence| Igit rev-parse --show-toplevel
+        H -->|appState Caching & Persistence| I
         I -->|Calculates Data Arrays| J
         I -->|Calculates Coordinates| K
     end
@@ -148,7 +148,7 @@ dohad_platform/
 ```mermaid
 flowchart TD
     %% Font and Typography
-    classDef default font-family: "Inter", "Helvetica Neue", "Helvetica", "Source Sans Pro", sans-serif, font-size: 15px, color: #334155;
+    classDef default font-family:sans-serif, font-size: 15px, color: #334155;
     
     %% Publication-Quality Color Palette
     classDef blueBox fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,rx:12px,ry:12px,shadow:true;
