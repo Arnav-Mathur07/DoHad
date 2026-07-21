@@ -18,13 +18,13 @@
 
 # 📖 Overview
 
-The **Developmental Origins of Health and Disease (DOHaD)** paradigm provides first evidence that the environment in the early life; sensitive window (prenatal and early postnatal period) cross that imprint our body structure and function and pre-dispose us to obesity, cardiovascular and non-communicable diseases in our later stage of life.
+The **Developmental Origins of Health and Disease (DOHaD)** paradigm demonstrates that environmental exposures during critical windows of early life—prenatal development and early postnatal stages—permanently shape physiological structure and function, determining susceptibility to chronic non-communicable diseases later in life. 
 
- The most highly toxic, persistent and widespread of environmental risks are metalloid and heavy metal (including Arsenic, Cadmium, Lead and Mercury). Because these toxicants easily cross the maternal-fetal barrier early-life exposure could cause mass deregulation of epigenetic programming, energy metabolism and organogenesis.
+Among these environmental hazards, heavy metals (such as **Arsenic**, **Cadmium**, **Lead**, and **Mercury**) are highly toxic, persistent, and ubiquitous. Because these toxicants easily cross the maternal-fetal barrier, early-life exposure can disrupt normal epigenetic programming, metabolic homeostasis, and organogenesis.
 
- While the need for DOHaD is undeniable,  what exists in the scientific literature is somewhat sporadic.  There are thousands of toxicology articles released in loosely-indexed,  informal institutions,  tables, and books and under very general ‘medical headlining’ terms.  This presents increasingly difficult challenges for behavioral epidemiologists and policy-makers to filter through as it directly pertains to trends of articles across the hundreds of thousands of publications,  to policesin the public population for exposures, or as an input for a meta-analysis.
+Despite the critical importance of DOHaD research, the scientific literature remains highly fragmented. Thousands of toxicology studies are scattered across disparate academic journals, written in varying formats, and indexed under generic medical terms. Consequently, epidemiologists, toxicologists, and policymakers struggle to quickly identify trends, isolate exposure thresholds, or run meta-analyses on how specific toxicants impact target organ systems.
 
-This fragmentation is countered through a common repository and analytical platform,  the DOHaD Exposure Intelligence Platform. It is a coherent, quality-controlled research database, multi-dimensional filter, and visualization interface. Bridging the gap between publications in papers and epidemiological knowledge.
+The **DOHaD Exposure Intelligence Platform** addresses this fragmentation by providing a unified repository and analysis suite. The platform offers a structured, quality-controlled research database, multi-dimensional filtering, and interactive visualizations. It bridges the gap between raw scientific papers and actionable epidemiological insights.
 
 ---
 
@@ -41,7 +41,7 @@ This fragmentation is countered through a common repository and analytical platf
 
 # 🏗️ System Architecture
 
-Platform architecture The DOHaD Exposure Intelligence Platform is a loosely coupled system which can run in a lightweight static mode that loads preprocessed datasets into the browser (as JavaScript objects) or a database-supported enterprise mode (implemented with node.js,  express, and mysql).
+The DOHaD Exposure Intelligence Platform is designed with a decoupled architecture. This allows for both lightweight static deployments (loading preprocessed datasets client-side via JavaScript) and database-backed enterprise environments (powered by Node.js, Express, and MySQL).
 
 ```mermaid
 graph TD
@@ -77,7 +77,7 @@ graph TD
 
         G -->|User Input Event| H
         H -->|Fetches Static CSV / API| C
-        H -->|appState Caching & Persistence| I
+        H -->|appState Caching & Persistence| Igit rev-parse --show-toplevel
         I -->|Calculates Data Arrays| J
         I -->|Calculates Coordinates| K
     end
@@ -144,84 +144,70 @@ dohad_platform/
 ---
 
 # 🔬 Scientific Background
-<div align="center">
+
 ```mermaid
 flowchart TD
-    %% Styling
-    classDef exposure fill:#f9f9f9,stroke:#333,stroke-width:2px,rx:10,ry:10
-    classDef mechanism fill:#e6f7ff,stroke:#1890ff,stroke-width:2px,rx:10,ry:10
-    classDef consequence fill:#fff1f0,stroke:#f5222d,stroke-width:2px,rx:10,ry:10
-    classDef outcome fill:#f6ffed,stroke:#52c41a,stroke-width:2px,rx:10,ry:10
     %% Font and Typography
     classDef default font-family: "Inter", "Helvetica Neue", "Helvetica", "Source Sans Pro", sans-serif, font-size: 15px, color: #334155;
     
-    A["🧪 Environmental Toxicant Exposure"]:::exposure
-    B["🤰 Maternal Exposure During Pregnancy"]:::exposure
-    C["🔄 Placental Transfer"]:::mechanism
-    D["👶 Fetal Exposure"]:::mechanism
-    E["🧬 Epigenetic Alterations"]:::mechanism
-    F["🧠 Altered Organogenesis"]:::consequence
-    G["⚖️ Endocrine Disruption"]:::consequence
-    H["⏳ Developmental Programming"]:::consequence
-    I["⚙️ Permanent Physiological Changes"]:::consequence
-    J["⚠️ Increased Lifetime Disease Risk"]:::outcome
-    %% Publication-Quality Color Palette (Soft colors, distinct borders, rounded corners)
+    %% Publication-Quality Color Palette
     classDef blueBox fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,rx:12px,ry:12px,shadow:true;
     classDef purpleBox fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,rx:12px,ry:12px,shadow:true;
     classDef orangeBox fill:#fff7ed,stroke:#f97316,stroke-width:2px,rx:12px,ry:12px,shadow:true;
     classDef greenBox fill:#f0fdf4,stroke:#22c55e,stroke-width:2px,rx:12px,ry:12px,shadow:true;
     classDef redBox fill:#fef2f2,stroke:#ef4444,stroke-width:2px,rx:12px,ry:12px,shadow:true;
     classDef diseaseList fill:#ffffff,stroke:#ef4444,stroke-width:1px,stroke-dasharray: 3 3,rx:8px,ry:8px,shadow:false;
-    %% Nodes (Padded with non-breaking spaces for uniform width simulation)
-    A["🧪 <b>Early-Life Environmental Toxicants</b><br/>(Lead, Mercury, Cadmium, Arsenic)"]:::blueBox
-    B["🤰 <b>Placental Transfer & Fetal Exposure</b>"]:::blueBox
-    C["🧬 <b>Disrupted Epigenetic Programming</b><br/>(DNA Methylation / Histone Modifications)"]:::purpleBox
+
+    %% Nodes
+    A["🧪 Early-Life Environmental Toxicants<br/>(Lead, Mercury, Cadmium, Arsenic)"]:::blueBox
+    B["🤰 Placental Transfer & Fetal Exposure"]:::blueBox
+    C["🧬 Disrupted Epigenetic Programming<br/>(DNA Methylation / Histone Modifications)"]:::purpleBox
     
-    K["• Neurodevelopmental Disorders<br>• Cardiovascular Diseases<br>• Kidney Disorders<br>• Liver Disorders<br>• Respiratory Disorders"]:::outcome
-    D["🫀 <b>Altered Organogenesis</b>"]:::orangeBox
-    E["⚖️ <b>Endocrine Disruption</b>"]:::orangeBox
+    D["🫀 Altered Organogenesis"]:::orangeBox
+    E["⚖️ Endocrine Disruption"]:::orangeBox
     
-    F["⚙️ <b>Permanent Alterations in Physiology</b>"]:::greenBox
+    F["⚙️ Permanent Alterations in Physiology"]:::greenBox
     
-    G["⚠️ <b>Increased Chronic Disease Risk</b>"]:::redBox
+    G["⚠️ Increased Chronic Disease Risk"]:::redBox
     
     H["🩺 Neurodevelopmental Disorders<br/>🩺 Cardiovascular Diseases<br/>🩺 Renal Disorders<br/>🩺 Respiratory Disorders"]:::diseaseList
+
     %% Structural Alignment & Layout
     A --> B
     B --> C
     
     %% Balanced Branching
     C --> D
-    D --> E
     C --> E
     
     %% Seamless Merging
     D --> F
     E --> F
-    E --> G
-    F --> H
-    G --> H
-    H --> I
-    I --> J
-    J --> K
     
     F --> G
     G --- H
+
     %% Thin, Smooth Scientific Arrows
     linkStyle 0,1,2,3,4,5,6 stroke:#94a3b8,stroke-width:1.5px,fill:none;
-    linkStyle 7 stroke:none; %% Invisible link for attaching the disease list flush to the disease risk box
+    linkStyle 7 stroke:none;
 ```
+
 The **Developmental Origins of Health and Disease (DOHaD)** paradigm illustrates how early-life environmental exposures interact with human development to permanently shape biological trajectories. During critical windows of fetal gestation, toxicant exposures—such as heavy metals (Lead, Mercury, Cadmium, Arsenic)—are not merely acute hazards but potent modifiers of long-term physiological programming.
-</div>
+
 When a mother is exposed to these environmental toxicants, the compounds often bypass the placental barrier, leading to direct fetal exposure. Because developing organ systems are highly plastic, these stressors induce profound molecular responses. Specifically, rather than directly mutating DNA sequences, toxicants disrupt **epigenetic programming** through anomalous DNA methylation, histone modification, and non-coding RNA interference.
+
 These epigenetic shifts misregulate cellular differentiation and disrupt developmental homeostasis. As a result, processes like organogenesis are structurally altered, and endocrine signaling pathways are disrupted. These changes become embedded as permanent physiological deviations, a process known as **developmental programming**. 
+
 Ultimately, these hardwired deviations manifest as an increased susceptibility to chronic, non-communicable diseases later in life. Individuals exposed in utero face significantly higher lifetime risks for a spectrum of pathologies, including neurodevelopmental disorders, cardiovascular disease, renal dysfunction, and chronic liver or respiratory conditions. Understanding this pathway is critical for developing early interventions and establishing tighter environmental regulations.
+
 The scientific basis of this project rests on several key areas of developmental toxicology and environmental health:
+
 ### 1. The DOHaD Hypothesis
 Organisms are highly sensitive to their environment during early development. Environmental stressors (such as nutrition or toxicants) can trigger permanent changes in physiology and structure through **fetal programming**. These shifts, while sometimes serving as immediate adaptations to survive in-utero stress, often lead to a mismatch with the postnatal environment, increasing the risk of chronic diseases in adulthood.
+
 ### 2. Epigenetic Modifications
-Heavy metals do not necessarily alter DNA sequences directly. Instead, they interfere with epigenetic mechanisms. Prenatal metal exposure can alter **DNA methylation patterns**, modify **histones**, and disrupt **non-coding RNA expression**. These changes can silence or overexpress genes regulating cellular differentiation, leaving a molecular footprint that persists throughout the individual's life.
 Heavy metals do not necessarily alter DNA sequences directly. Instead, they interfere with epigenetic mechanisms. Prenatal metal exposure can alter **DNA methylation patterns**, modify **histones**, and disrupt **non-coding RNA expression**. These changes can silenece or overexpress genes regulating cellular differentiation, leaving a molecular footprint that persists throughout the individual's life.
+
 ### 3. Fetal Organogenesis & Tissue-Specific Vulnerability
 During gestation, organs develop at different rates. Exposure to developmental toxicants during these precise windows can disrupt tissue development:
 *   **Neurodevelopment:** Metals like Lead and Mercury easily cross the blood-brain barrier, altering synaptic connectivity and neural stem cell differentiation.
@@ -253,7 +239,10 @@ flowchart TD
     Step8 --> Step9[10. Render Paginated Research Cards]
     Step9 -->|Updates Cached State| Step6
 ```
-1.  **Entrez API Querying:** All the Python scripts refer to the NCBI Entrez Utilities from The National Center for Biotechnology Information to fetch the relevant literature. The search query specifies the keywords in the literature to look for: `(prenatal OR developmental OR in utero) AND (heavy metals OR arsenic OR lead OR mercury OR cadmium) AND (toxicity OR outcomes)`.
+
+The dataset is maintained and queried using an automated pipeline designed to retrieve, parse, and structure academic literature before feeding it into the interactive frontend:
+
+1.  **Entrez API Querying:** Python scripts query the NCBI Entrez Utilities to pull relevant literature. The search query targets research containing key terms: `(prenatal OR developmental OR in utero) AND (heavy metals OR arsenic OR lead OR mercury OR cadmium) AND (toxicity OR outcomes)`.
 2.  **XML Parsing:** The Entrez server returns raw XML files.  Metadata fields are extracted using Python‘s XML parsing libraries such as the PubMed ID (PMID), Title, Abstract, Journal, Year of Publication, and DOI.
 3. **Data Enrichment:** Regex pattern matching, scripts analyze the titles and abstracts to began pre classifying:
     *   *Species:* Categorized as `Human` or `Animal` based on keyword lists (e.g., *murine, rat, mouse, pregnancy, cohort*).
@@ -261,6 +250,8 @@ flowchart TD
     *   *Organ System:* Mapped to specific organ categories (e.g., *brain, kidney, liver, heart, lung*) if relevant vocabulary is detected in the text.
 4.  **Export:** The pipeline produces both a common CSV file (prenatal_heavy_metals.csv),  and a formatted SQL script (DOHaD.sql) with pre-formatted INSERT statements ready to be imported into a database.
 5. **Interactive workflow.** When the data gets exported out, it is loaded in to memory on the client side.  Now a user can interact with the UI, the engine filters the data very fast and re-render the chart and study cards dynamically.
+
+---
 
 # 📊 Metadata Captured
 
@@ -287,13 +278,13 @@ The platform processes and displays the following metadata schema:
 
 # 🧹 Quality Control
 
-As part of the preprocessing chain that ensures valid data for the visualisations and search engines, the following quality checks are performed:
+To ensure the integrity of the data used for visualizations and search tools, the preprocessing pipeline applies several validation steps:
 
-* **BOM Correction:** Strips (UTF-8) Byte Order Mark (’\uFEFF’) which would otherwise corrupt the CSV headers in memory in raw files.
-• **Stringent Column Consistency:** Harmonizes column names within files (e.g. `dose (ppm)’ alias as `dose’ & `organs’ alias as `organ’).
-* **Type Coercion:** converts publication years to numeric ( integer -_numericYear- ).
-* **Duplicate Filtering:** uses the pubmed id (`pmid’) as a primary key to filter out duplicate during update.
-* **String sanitization:** is performed on each string, to remove any whitespace (killing the header) and to remove escaped quotes (which would otherwise throw the CSV file reader).
+*   **BOM Correction:** Removes the UTF-8 Byte Order Mark (`\uFEFF`) from raw files, which can otherwise corrupt CSV headers in memory.
+*   **Strict Column Alignment:** Standardizes column names across files (e.g., aliasing `dose (ppm)` to `dose` and `organs` to `organ`).
+*   **Type Coercion:** Casts publication years to numeric integers (`_numericYear`) to ensure numerical filtering works correctly.
+*   **Duplicate Filtering:** Uses the unique PubMed ID (`pmid`) as a primary key to deduplicate records during updates.
+*   **String Sanitization:** Trims whitespace and strips unescaped double quotes that could break standard CSV line readers.
 
 ---
 
@@ -303,8 +294,9 @@ The platform supports two storage methods, balancing simplicity with scalability
 
 ### 1. Flat-File Storage (Static Deployment)
 *   **Format:** Structured CSV file (`prenatal_heavy_metals.csv`) stored in `frontend/assets/`.
-*   **In-Memory Querying:** Fetched from the client side. The CSV is processed with a custom quote-aware parser engine in the browser.
-*   **Benefits:** Provides scope for the site to be run serverless,  thus very easily deployable on static hosting solutions such as GitHub Pages.
+*   **In-Memory Querying:** Loaded client-side via a fetch request. A custom, quote-aware parsing engine processes the CSV in the browser.
+*   **Advantage:** Allows the platform to run serverless, making it easy to deploy on static hosts like GitHub Pages.
+
 ### 2. Relational Database (Enterprise Deployment)
 *   **Format:** Relational MySQL schema (`DOHaD` and `dohad_auth` databases).
 *   **Server Stack:** Node.js Express server running on port `3000` using the `mysql2` driver.
@@ -355,11 +347,11 @@ The search and filtering logic operates client-side to provide responsive result
                   └───────────────────────────────┘
 ```
 
-* **AND-Gate Logic:** All active filters are combined and applied in all at the same time. A record will be included in the result until it satisfies at the least all of the criteria.
-* **Deep Keyword Search:** This search input matches the terms it contains to the title, key findings, and abstract text, regardless of case.
-* **Extracting an Exposure Period:** When users filter by exposure window, the engine performs text matching on the title and key findings to find articles that fit.
-* **Article Type Recognition:** Filters separate into ‘Research’ and ‘Review’ articles by parsing metadata tags and searching titles for keywords such as “review”.
-* **State Persistence:** The current filter criteria are serialized and stored in the browser‘s sessionStorage. Maintains the focus state across pages (index, database, analytics).
+*   **AND-Gate Logic:** The application applies all active filters simultaneously. A record is only included in the output if it meets every selected criteria.
+*   **Deep Keyword Search:** The search input compares terms against the title, key findings, and abstract text, returning matches regardless of letter case.
+*   **Exposure Period Extraction:** If a user filters by exposure window, the engine runs text matches on the title and key findings to identify relevant studies.
+*   **Article Type Detection:** Filters partition the dataset into `Research` or `Review` by analyzing metadata tags and checking titles for keywords (e.g., searching for "review").
+*   **State Persistence:** Active filter criteria are serialized and saved to the browser's `sessionStorage`. This maintains the user's focus state when navigating between pages (e.g., index, database, analytics).
 
 ---
 
