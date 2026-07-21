@@ -144,60 +144,89 @@ dohad_platform/
 ---
 
 # 🔬 Scientific Background
-
+<div align="center">
+```mermaid
+flowchart TD
+    %% Styling
+    classDef exposure fill:#f9f9f9,stroke:#333,stroke-width:2px,rx:10,ry:10
+    classDef mechanism fill:#e6f7ff,stroke:#1890ff,stroke-width:2px,rx:10,ry:10
+    classDef consequence fill:#fff1f0,stroke:#f5222d,stroke-width:2px,rx:10,ry:10
+    classDef outcome fill:#f6ffed,stroke:#52c41a,stroke-width:2px,rx:10,ry:10
+    %% Font and Typography
+    classDef default font-family: "Inter", "Helvetica Neue", "Helvetica", "Source Sans Pro", sans-serif, font-size: 15px, color: #334155;
+    
+    A["🧪 Environmental Toxicant Exposure"]:::exposure
+    B["🤰 Maternal Exposure During Pregnancy"]:::exposure
+    C["🔄 Placental Transfer"]:::mechanism
+    D["👶 Fetal Exposure"]:::mechanism
+    E["🧬 Epigenetic Alterations"]:::mechanism
+    F["🧠 Altered Organogenesis"]:::consequence
+    G["⚖️ Endocrine Disruption"]:::consequence
+    H["⏳ Developmental Programming"]:::consequence
+    I["⚙️ Permanent Physiological Changes"]:::consequence
+    J["⚠️ Increased Lifetime Disease Risk"]:::outcome
+    %% Publication-Quality Color Palette (Soft colors, distinct borders, rounded corners)
+    classDef blueBox fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,rx:12px,ry:12px,shadow:true;
+    classDef purpleBox fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,rx:12px,ry:12px,shadow:true;
+    classDef orangeBox fill:#fff7ed,stroke:#f97316,stroke-width:2px,rx:12px,ry:12px,shadow:true;
+    classDef greenBox fill:#f0fdf4,stroke:#22c55e,stroke-width:2px,rx:12px,ry:12px,shadow:true;
+    classDef redBox fill:#fef2f2,stroke:#ef4444,stroke-width:2px,rx:12px,ry:12px,shadow:true;
+    classDef diseaseList fill:#ffffff,stroke:#ef4444,stroke-width:1px,stroke-dasharray: 3 3,rx:8px,ry:8px,shadow:false;
+    %% Nodes (Padded with non-breaking spaces for uniform width simulation)
+    A["🧪 <b>Early-Life Environmental Toxicants</b><br/>(Lead, Mercury, Cadmium, Arsenic)"]:::blueBox
+    B["🤰 <b>Placental Transfer & Fetal Exposure</b>"]:::blueBox
+    C["🧬 <b>Disrupted Epigenetic Programming</b><br/>(DNA Methylation / Histone Modifications)"]:::purpleBox
+    
+    K["• Neurodevelopmental Disorders<br>• Cardiovascular Diseases<br>• Kidney Disorders<br>• Liver Disorders<br>• Respiratory Disorders"]:::outcome
+    D["🫀 <b>Altered Organogenesis</b>"]:::orangeBox
+    E["⚖️ <b>Endocrine Disruption</b>"]:::orangeBox
+    
+    F["⚙️ <b>Permanent Alterations in Physiology</b>"]:::greenBox
+    
+    G["⚠️ <b>Increased Chronic Disease Risk</b>"]:::redBox
+    
+    H["🩺 Neurodevelopmental Disorders<br/>🩺 Cardiovascular Diseases<br/>🩺 Renal Disorders<br/>🩺 Respiratory Disorders"]:::diseaseList
+    %% Structural Alignment & Layout
+    A --> B
+    B --> C
+    
+    %% Balanced Branching
+    C --> D
+    D --> E
+    C --> E
+    
+    %% Seamless Merging
+    D --> F
+    E --> F
+    E --> G
+    F --> H
+    G --> H
+    H --> I
+    I --> J
+    J --> K
+    
+    F --> G
+    G --- H
+    %% Thin, Smooth Scientific Arrows
+    linkStyle 0,1,2,3,4,5,6 stroke:#94a3b8,stroke-width:1.5px,fill:none;
+    linkStyle 7 stroke:none; %% Invisible link for attaching the disease list flush to the disease risk box
 ```
-                              ┌────────────────────────────────────────┐
-                              │ Early-Life Environmental Toxicants     │
-                              │ (Lead, Mercury, Cadmium, Arsenic)      │
-                              └───────────────────┬────────────────────┘
-                                                  │
-                                                  ▼
-                              ┌────────────────────────────────────────┐
-                              │ Placental Transfer & Fetal Exposure    │
-                              └───────────────────┬────────────────────┘
-                                                  │
-                                                  ▼
-                              ┌────────────────────────────────────────┐
-                              │   Disrupted Epigenetic Programming     │
-                              │   (DNA methylation / Histone mods)     │
-                              └───────────────────┬────────────────────┘
-                                                  │
-                              ┌───────────────────┴────────────────────┐
-                              ▼                                        ▼
-               ┌─────────────────────────────┐          ┌─────────────────────────────┐
-               │    Altered Organogenesis    │          │    Endocrine Disruption     │
-               └──────────────┬──────────────┘          └──────────────┬──────────────┘
-                              │                                        │
-                              └───────────────────┬────────────────────┘
-                                                  │
-                                                  ▼
-                              ┌────────────────────────────────────────┐
-                              │  Permanent Alterations in Physiology   │
-                              └───────────────────┬────────────────────┘
-                                                  │
-                                                  ▼
-                              ┌────────────────────────────────────────┐
-                              │    Increased Chronic Disease Risk      │
-                              │  (Neuro, Cardio, Renal Pathologies)    │
-                              └────────────────────────────────────────┘
-```
-
+The **Developmental Origins of Health and Disease (DOHaD)** paradigm illustrates how early-life environmental exposures interact with human development to permanently shape biological trajectories. During critical windows of fetal gestation, toxicant exposures—such as heavy metals (Lead, Mercury, Cadmium, Arsenic)—are not merely acute hazards but potent modifiers of long-term physiological programming.
+</div>
+When a mother is exposed to these environmental toxicants, the compounds often bypass the placental barrier, leading to direct fetal exposure. Because developing organ systems are highly plastic, these stressors induce profound molecular responses. Specifically, rather than directly mutating DNA sequences, toxicants disrupt **epigenetic programming** through anomalous DNA methylation, histone modification, and non-coding RNA interference.
+These epigenetic shifts misregulate cellular differentiation and disrupt developmental homeostasis. As a result, processes like organogenesis are structurally altered, and endocrine signaling pathways are disrupted. These changes become embedded as permanent physiological deviations, a process known as **developmental programming**. 
+Ultimately, these hardwired deviations manifest as an increased susceptibility to chronic, non-communicable diseases later in life. Individuals exposed in utero face significantly higher lifetime risks for a spectrum of pathologies, including neurodevelopmental disorders, cardiovascular disease, renal dysfunction, and chronic liver or respiratory conditions. Understanding this pathway is critical for developing early interventions and establishing tighter environmental regulations.
 The scientific basis of this project rests on several key areas of developmental toxicology and environmental health:
-
 ### 1. The DOHaD Hypothesis
-During early development, organism are physiologically most adaptable to the environment.  However, environmental stressors (nutrition,  toxicants) of the environment can induce irreversible alterations of structure and physiology via fetal programming,  which although may reflect adaptations to in-utero stress,  could contribute to the increased to the postnatal environment and to heightened risks of later-life, non-communicable diseases.
-
+Organisms are highly sensitive to their environment during early development. Environmental stressors (such as nutrition or toxicants) can trigger permanent changes in physiology and structure through **fetal programming**. These shifts, while sometimes serving as immediate adaptations to survive in-utero stress, often lead to a mismatch with the postnatal environment, increasing the risk of chronic diseases in adulthood.
 ### 2. Epigenetic Modifications
-Heavy metals may not actually change DNA,  but they may hamper epigenetic processes.  Exposure to metals during the prenatal period hasbeen linked to changed methylation profiles,  changes to histones and changes in non-coding RNA expression which may silence or over-express genes that govern cellular differentiation,  which results in an indelible footprint that will stay with the individual forever.
-
+Heavy metals do not necessarily alter DNA sequences directly. Instead, they interfere with epigenetic mechanisms. Prenatal metal exposure can alter **DNA methylation patterns**, modify **histones**, and disrupt **non-coding RNA expression**. These changes can silence or overexpress genes regulating cellular differentiation, leaving a molecular footprint that persists throughout the individual's life.
+Heavy metals do not necessarily alter DNA sequences directly. Instead, they interfere with epigenetic mechanisms. Prenatal metal exposure can alter **DNA methylation patterns**, modify **histones**, and disrupt **non-coding RNA expression**. These changes can silenece or overexpress genes regulating cellular differentiation, leaving a molecular footprint that persists throughout the individual's life.
 ### 3. Fetal Organogenesis & Tissue-Specific Vulnerability
-During gestation,  different organ systems develop at various points in time.  Contact with developmental toxicants during critical time frames can affect the development of tissues by:
-
-Neurodevelopment: Metals (e.g.,  Lead,  Mercury) readily cross the blood-brain barrier,  thus affecting synaptic connectivity and neural differentiation of stem cells.
-
-Cardiovascular System:  Endothelial dysfunction and altered microvasculature development following arsenic exposure provide a precursor to adult hypertension and cardiovascular disease.
-
-Renal Development.2Cadmium builds up in the developing renal cortex,  decreasing nephron endowment and increasing the risk of CKD.
+During gestation, organs develop at different rates. Exposure to developmental toxicants during these precise windows can disrupt tissue development:
+*   **Neurodevelopment:** Metals like Lead and Mercury easily cross the blood-brain barrier, altering synaptic connectivity and neural stem cell differentiation.
+*   **Cardiovascular System:** Arsenic exposure impairs endothelial function and microvascular development, laying the groundwork for adult hypertension and cardiovascular disease.
+*   **Renal Development:** Cadmium accumulates in the developing renal cortex, reducing nephron endowment and predisposing individuals to chronic kidney disease (CKD).
 
 ---
 
